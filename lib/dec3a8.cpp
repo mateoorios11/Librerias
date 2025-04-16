@@ -5,7 +5,11 @@
      RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
      RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
  
+<<<<<<< HEAD
      GPIOB->CRL |= 0x11111111;
+=======
+     GPIOB->CRL |= 0x11111111; 
+>>>>>>> 869e3451247fd98a91c22fe93c2f229dafafc477
  }
  void dec3a8(int I0, int I1, int I2)
  {
@@ -14,7 +18,7 @@
      switch (valor)
      {
      case 000:
-         for (a = 0; i < 8; a++)
+         for (a = 0; a < 8; a++)
          {
              if (a != 0)
              {
@@ -26,7 +30,7 @@
      case 001:
          for (a = 0; a < 8; a++)
          {
-             if (i != 1)
+             if (a != 1)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }
@@ -46,7 +50,7 @@
      case 011:
          for (a = 0; a < 8; a++)
          {
-             if (i != 3)
+             if ( != 3)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }
@@ -76,7 +80,7 @@
      case 110:
          for (a = 0; a < 8; a++)
          {
-             if (i != 6)
+             if (a != 6)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }

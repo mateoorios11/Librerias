@@ -14,7 +14,7 @@
      switch (valor)
      {
      case 000:
-         for (a = 0; i < 8; a++)
+         for (a = 0; a < 8; a++)
          {
              if (a != 0)
              {
@@ -26,7 +26,7 @@
      case 001:
          for (a = 0; a < 8; a++)
          {
-             if (i != 1)
+             if (a != 1)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }
@@ -46,7 +46,7 @@
      case 011:
          for (a = 0; a < 8; a++)
          {
-             if (i != 3)
+             if ( != 3)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }

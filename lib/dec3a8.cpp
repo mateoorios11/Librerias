@@ -76,7 +76,7 @@
      case 110:
          for (a = 0; a < 8; a++)
          {
-             if (i != 6)
+             if (a != 6)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }
@@ -84,9 +84,9 @@
          GPIOB->BSRR |= (1 << 6);
          break;
      case 111:
-         for (a = 0; i < 8; a++)
+         for (a = 0; a < 8; a++)
          {
-             if (i != 7)
+             if (a != 7)
              {
                  GPIOB->BSRR |= (1 << (a + 16));
              }

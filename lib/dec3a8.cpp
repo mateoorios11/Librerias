@@ -5,7 +5,7 @@
      RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
      RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
  
-     GPIOB->CRL |= 0x11111111; // config.: 00 : output push-pull and mode: 01 : output max speed 10MHz
+     GPIOB->CRL |= 0x11111111; 
  }
  void dec3a8(int I0, int I1, int I2)
  {

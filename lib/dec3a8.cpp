@@ -1,7 +1,7 @@
-DEC3A8.cpp
+
 #include "DEC3A8.h"
-void Ent_Sal(){
+void DEC3A8_init(){
 for(i=0,i<<3,i++){
     
-}
+    
 }

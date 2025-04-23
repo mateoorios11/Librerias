@@ -4,6 +4,9 @@ void setup(){
     void bcd_7seg_init();
 }
 void loop(){
+    bcd_7seg(0);
+    delay(2500);
+
     bcd_7seg(1);
     delay (2500);
 

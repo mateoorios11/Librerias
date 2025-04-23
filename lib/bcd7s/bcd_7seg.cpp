@@ -1,5 +1,4 @@
 #include "bcd_7seg.h"
-int a = 0;
 void bcd_7seg_init()
 {
 
@@ -16,6 +15,15 @@ void bcd_7seg(int num)
 {
     switch (num)
     {
+    case 0:
+    GPIOA-> BSRR|= GPIO_BSRR_BS0;
+    GPIOA-> BSRR|= GPIO_BSRR_BS1;
+    GPIOA-> BSRR|= GPIO_BSRR_BS2;
+    GPIOA-> BSRR|= GPIO_BSRR_BS3;
+    GPIOA-> BSRR|= GPIO_BSRR_BS4;
+    GPIOA-> BSRR|= GPIO_BSRR_BS5;
+    GPIOA-> BSRR|= GPIO_BSRR_BR6;
+    break;
     case 1:
     GPIOA-> BSRR|= GPIO_BSRR_BR0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -33,7 +41,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BS4;
     GPIOA-> BSRR|= GPIO_BSRR_BR5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
-        break;
+    break;
     case 3:
     GPIOA-> BSRR|= GPIO_BSRR_BS0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -42,6 +50,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BR4;
     GPIOA-> BSRR|= GPIO_BSRR_BR5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
     case 4:
     GPIOA-> BSRR|= GPIO_BSRR_BR0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -50,6 +59,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BS4;
     GPIOA-> BSRR|= GPIO_BSRR_BS5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
     case 5:
     GPIOA-> BSRR|= GPIO_BSRR_BS0;
     GPIOA-> BSRR|= GPIO_BSRR_BR1;
@@ -58,6 +68,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BR4;
     GPIOA-> BSRR|= GPIO_BSRR_BS5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
     case 6:
     GPIOA-> BSRR|= GPIO_BSRR_BR0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -66,6 +77,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BS4;
     GPIOA-> BSRR|= GPIO_BSRR_BR5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
     case 7:
     GPIOA-> BSRR|= GPIO_BSRR_BS0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -74,6 +86,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BR4;
     GPIOA-> BSRR|= GPIO_BSRR_BR5;
     GPIOA-> BSRR|= GPIO_BSRR_BR6;
+    break;
     case 8:
     GPIOA-> BSRR|= GPIO_BSRR_BS0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -82,6 +95,7 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BS4;
     GPIOA-> BSRR|= GPIO_BSRR_BS5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
     case 9:
     GPIOA-> BSRR|= GPIO_BSRR_BS0;
     GPIOA-> BSRR|= GPIO_BSRR_BS1;
@@ -90,5 +104,14 @@ void bcd_7seg(int num)
     GPIOA-> BSRR|= GPIO_BSRR_BR4;
     GPIOA-> BSRR|= GPIO_BSRR_BS5;
     GPIOA-> BSRR|= GPIO_BSRR_BS6;
+    break;
+    default:
+    GPIOA-> BSRR|= GPIO_BSRR_BR0;
+    GPIOA-> BSRR|= GPIO_BSRR_BR1;
+    GPIOA-> BSRR|= GPIO_BSRR_BR2;
+    GPIOA-> BSRR|= GPIO_BSRR_BR3;
+    GPIOA-> BSRR|= GPIO_BSRR_BR4;
+    GPIOA-> BSRR|= GPIO_BSRR_BR5;
+    GPIOA-> BSRR|= GPIO_BSRR_BR6;
     }
 }

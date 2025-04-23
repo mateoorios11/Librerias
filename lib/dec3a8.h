@@ -5,6 +5,6 @@
 
 void dec3a8_init();
 
-void dec3a8(int, int, int);
+void dec3a8(int I0, int I1, int I2);
 
 #endif

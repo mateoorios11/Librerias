@@ -1,52 +1,94 @@
 #include "7seg.h"
-int l = 0;
+int a = 0;
 void _7seg_init()
 {
 
-    RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
-    GPIOB->CRL |= 0x11111111; 
-
+    RCC -> APB2ENR |= RCC_APB2ENR_IOPBEN;
+    GPIOB->CRL |= ~GPIO_CRL_CNF0 | GPIO_CRL_MODE0_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF1 | GPIO_CRL_MODE1_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF2 | GPIO_CRL_MODE2_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF3 | GPIO_CRL_MODE3_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF4 | GPIO_CRL_MODE4_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF5 | GPIO_CRL_MODE5_0; 
+    GPIOB->CRL |= ~GPIO_CRL_CNF6 | GPIO_CRL_MODE6_0;
+} 
 void _7seg(int num)
 {
     switch (num)
     {
     case 1:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 4) | (1 << 5);
-        break;
+    GPIO -> BSRR|= GPIO_BSRR_BR0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BR3;
+    GPIO -> BSRR|= GPIO_BSRR_BR4;
+    GPIO -> BSRR|= GPIO_BSRR_BR5;
+    GPIO -> BSRR|= GPIO_BSRR_BR6;
+    break;
     case 2:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 0) | (1 << 1) | (1 << 3) | (1 << 4) | (1 << 6);
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BR2;
+    GPIO -> BSRR|= GPIO_BSRR_BS3;
+    GPIO -> BSRR|= GPIO_BSRR_BS4;
+    GPIO -> BSRR|= GPIO_BSRR_BR5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
         break;
     case 3:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 6);
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BS3;
+    GPIO -> BSRR|= GPIO_BSRR_BR4;
+    GPIO -> BSRR|= GPIO_BSRR_BR5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
     case 4:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 1) | (1 << 2) | (1 << 5) | (1 << 6);
+    GPIO -> BSRR|= GPIO_BSRR_BR0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BR3;
+    GPIO -> BSRR|= GPIO_BSRR_BS4;
+    GPIO -> BSRR|= GPIO_BSRR_BS5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
     case 5:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 0) | (1 << 2) | (1 << 3) | (1 << 5) | (1 << 6);
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BR1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BS3;
+    GPIO -> BSRR|= GPIO_BSRR_BR4;
+    GPIO -> BSRR|= GPIO_BSRR_BS5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
     case 6:
-        for (l = 0; l < 8; l++)
-        {
-            GPIOB->BSRR |= (1 << (l + 16));
-        }
-        GPIOB->BSRR |= (1 << 0) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6);
+    GPIO -> BSRR|= GPIO_BSRR_BR0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BS3;
+    GPIO -> BSRR|= GPIO_BSRR_BS4;
+    GPIO -> BSRR|= GPIO_BSRR_BR5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
+    case 7:
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BR3;
+    GPIO -> BSRR|= GPIO_BSRR_BR4;
+    GPIO -> BSRR|= GPIO_BSRR_BR5;
+    GPIO -> BSRR|= GPIO_BSRR_BR6;
+    case 8:
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BS3;
+    GPIO -> BSRR|= GPIO_BSRR_BS4;
+    GPIO -> BSRR|= GPIO_BSRR_BS5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
+    case 9:
+    GPIO -> BSRR|= GPIO_BSRR_BS0;
+    GPIO -> BSRR|= GPIO_BSRR_BS1;
+    GPIO -> BSRR|= GPIO_BSRR_BS2;
+    GPIO -> BSRR|= GPIO_BSRR_BR3;
+    GPIO -> BSRR|= GPIO_BSRR_BR4;
+    GPIO -> BSRR|= GPIO_BSRR_BS5;
+    GPIO -> BSRR|= GPIO_BSRR_BS6;
     }
 }

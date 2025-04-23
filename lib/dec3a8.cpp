@@ -1,23 +1,20 @@
+#include <Arduino.h>
 #include "dec3a8.h"
  int valor, a = 0;
  void dec3a8_init()
  {
      RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
-     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
- 
-<<<<<<< HEAD
-     GPIOB->CRL |= 0x11111111;
-=======
-     GPIOB->CRL |= 0x11111111; 
->>>>>>> 869e3451247fd98a91c22fe93c2f229dafafc477
+     GPIOB->CRL = 0x11111111;
  }
  void dec3a8(int I0, int I1, int I2)
  {
+    int valor;
      valor = I0 | I1 << 1 | I2 << 2;
  
      switch (valor)
      {
      case 000:
+     // cambiar por GPIO -> BSRR|= GPIO_BSRR_BSR0
          for (a = 0; a < 8; a++)
          {
              if (a != 0)

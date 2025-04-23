@@ -1,6 +1,6 @@
-#include "_7seg.h"
+#include "bcd_7seg.h"
 int a = 0;
-void _7seg_init()
+void bcd_7seg_init()
 {
 
     RCC -> APB2ENR |= RCC_APB2ENR_IOPAEN;
@@ -12,7 +12,7 @@ void _7seg_init()
     GPIOA->CRL |= ~GPIO_CRL_CNF5 | GPIO_CRL_MODE5_0; 
     GPIOA->CRL |= ~GPIO_CRL_CNF6 | GPIO_CRL_MODE6_0;
 } 
-void _7seg(int num)
+void bcd_7seg(int num)
 {
     switch (num)
     {

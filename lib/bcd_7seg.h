@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#ifndef _7SEG_H
-#define _7SEG_H
+#ifndef BCD_7SEG_H
+#define BCD_7SEG_H
 
-void _7seg_init();
-void _7seg(int num);
+void bcd_7seg_init();
+void bcd_7seg(int num);
 
 #endif
